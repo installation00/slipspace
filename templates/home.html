@@ -1,0 +1,54 @@
+{% load static %}
+
+<!doctype html>
+
+<html>
+<head>
+	<title>Formula 1 Statistics</title>
+</head>
+<body>
+	{% comment %} {% for model in models %}
+		<h1>{{ model }}</h1>
+		<table>
+            {% for r in race %}
+            <th>
+                {{ r.raceID }}
+            </th>
+            {% endfor %}
+			{% comment %} {% for obj in objects %}
+                <tr>
+                    {% for field_name in obj|get_fields %}
+                        <td>{{ obj }} - {{ field_name }}</td>
+                        <td>{{ getattr(obj, field_name) }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+		</table>
+	{% endfor %} {% endcomment %}
+    <div>
+        {% for model in models %}
+        <div>
+            <p>{{ model }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        {% for r in races %}
+        <div>
+            <p>{{ r.year }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <p>
+        {{ test }}
+    </p>
+        {% comment %} {% for obj in objects %}
+            <tr>
+                {% for field_name in obj|get_fields %}
+                    <td>{{ obj }} - {{ field_name }}</td>
+                    <td>{{ getattr(obj, field_name) }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %} {% endcomment %}
+</body>
+</html>
