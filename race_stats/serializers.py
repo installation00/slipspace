@@ -19,48 +19,40 @@ class RacesSerializer(serializers.ModelSerializer):
         model = races
         fields = '__all__'
 
-
 class DriversSerializer(serializers.ModelSerializer):
     class Meta:
         model = drivers
         fields = '__all__'
-
 
 class ConstructorsSerializer(serializers.ModelSerializer):
     class Meta:
         model = constructors
         fields = '__all__'
 
-
 class CircuitsSerializer(serializers.ModelSerializer):
     class Meta:
         model = circuits
         fields = '__all__'
-
 
 class SeasonsSerializer(serializers.ModelSerializer):
     class Meta:
         model = seasons
         fields = '__all__'
 
-
 class StatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = status
         fields = '__all__'
-
 
 class ConstructorStandingsSerializer(serializers.ModelSerializer):
     class Meta:
         model = constructor_standings
         fields = '__all__'
 
-
 class ConstructorResultsSerializer(serializers.ModelSerializer):
     class Meta:
         model = constructor_results
         fields = '__all__'
-
 
 class DriverStandingsSerializer(serializers.ModelSerializer):
     class Meta:
