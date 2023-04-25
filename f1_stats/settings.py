@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from dotenv import load_dotenv
-import os
 from pathlib import Path
+import os
 
 load_dotenv()
 
@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# DJANGO TABLES 2 TEMPLATE
+DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap5.html"
 
 # Application definition
 
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'race_stats',
+    'django_tables2',
 ]
 
 MIDDLEWARE = [

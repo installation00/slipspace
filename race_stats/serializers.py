@@ -1,5 +1,18 @@
 from rest_framework import serializers
-from .models import races, drivers, constructors, circuits, seasons, status, constructor_standings, constructor_results, driver_standings, sprint_results, qualifying, pit_stops, lap_times, results
+from .models import races
+from .models import drivers
+from .models import constructors
+from .models import circuits
+from .models import seasons
+from .models import status
+from .models import constructor_standings
+from .models import constructor_results
+from .models import driver_standings
+from .models import sprint_results
+from .models import qualifying
+from .models import pit_stops
+from .models import lap_times
+from .models import results
 
 class RacesSerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,54 +1,19 @@
-{% load static %}
-
 <!doctype html>
-
 <html>
 <head>
-	<title>Formula 1 Statistics</title>
+	<title>F1 STATS</title>
 </head>
 <body>
-	{% comment %} {% for model in models %}
-		<h1>{{ model }}</h1>
-		<table>
-            {% for r in race %}
-            <th>
-                {{ r.raceID }}
-            </th>
-            {% endfor %}
-			{% comment %} {% for obj in objects %}
-                <tr>
-                    {% for field_name in obj|get_fields %}
-                        <td>{{ obj }} - {{ field_name }}</td>
-                        <td>{{ getattr(obj, field_name) }}</td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-		</table>
-	{% endfor %} {% endcomment %}
-    <div>
-        {% for model in models %}
-        <div>
-            <p>{{ model }}</p>
-        </div>
-        {% endfor %}
-    </div>
-    <div>
-        {% for r in races %}
-        <div>
-            <p>{{ r.year }}</p>
-        </div>
-        {% endfor %}
-    </div>
-    <p>
-        {{ test }}
-    </p>
-        {% comment %} {% for obj in objects %}
-            <tr>
-                {% for field_name in obj|get_fields %}
-                    <td>{{ obj }} - {{ field_name }}</td>
-                    <td>{{ getattr(obj, field_name) }}</td>
-                {% endfor %}
-            </tr>
-        {% endfor %} {% endcomment %}
+	<h1>Select a model:</h1>
+  <form method="POST" action="{% url 'race_stats:stats' %}">
+    {% csrf_token %}
+    <label for="model-name">Select a model:</label>
+    <select name="model-name" id="model-name">
+      {% for model in models %}
+        <option value="{{ model }}">{{ model }}</option>
+      {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+  </form>
 </body>
 </html>
